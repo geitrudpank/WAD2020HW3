@@ -1,58 +1,252 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <router-link to="/">
+          <img src="../assets/logo.png" alt="postIt">
+        </router-link>
+      </div>
+      <div class="search-container">
+        <input type="text" name="search"><button type="button">Search</button>
+      </div>
+      <div class="avatar-container">
+        <img class="avatar">
+        <div class="drop-down-container">
+          <span id="user-name">John Doe</span>
+          <span id="user-email"></span>
+          <span class="separator"></span>
+          <span>
+              <a href="browse.html">Browse</a>
+            </span>
+          <span class="separator"></span>
+          <span>
+              <a href="login.html">Log Out</a>
+            </span>
+        </div>
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  props: {
-    msg: String
-  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
+  a {
+    color: #40c4ff;
+  }
+
+  button {
+    padding: 8px 16px;
+    margin: 4px 0;
+    color: #ffffff;
+    background-color: #01579b;
+    border: none;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
+    cursor: pointer;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+  }
+
+  header:hover {
+    box-shadow: 0 -20px 30px #4d4d4d;
+  }
+
+  nav {
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+  }
+
+  nav div {
+    height: 30px;
+    flex-grow: 4;
+    padding: 10px;
+  }
+
+  nav div img {
+    height: 100%;
+    width: 30px;
+    margin-left: 15px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  nav div.search-container > input {
+    box-sizing: border-box;
+    height: 30px;
+    width: 80%;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+  }
+
+  nav div.search-container > button {
+    height: 30px;
+    width: 20%;
+    margin: 0;
+    padding: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  nav div.avatar-container {
+    margin-right: 15px;
+    text-align: right;
+  }
+
+  .main-container {
+    width: 50%;
+    min-height: 100%;
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
+    background-color: #ffffff;
+  }
+
+  .post {
+    width: 80%;
+    margin: 15px auto;
+    box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+    border-radius: 5px;
+  }
+
+  .post .post-author {
+    padding: 10px;
+  }
+
+  .post .post-author::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .post .post-author .post-author-info {
+    float: left;
+    position: relative;
+    width: 50%;
+  }
+
+  .post .post-author .post-author-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 5px;
+  }
+
+  .post .post-author .post-author-info small {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+  }
+
+  .post .post-author .post-author-info + small {
+    float: right;
+    color: grey;
+    padding: 10px;
+  }
+
+  .post .post-image img, video {
+    width: 100%;
+    min-height: 150px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .post .post-title {
+    padding: 10px;
+  }
+
+  .post .post-title h3 {
+    display: inline;
+  }
+
+  .post .post-title ~ .post-actions {
+    padding: 10px;
+  }
+
+  .like-button {
+    background-image: url(../assets/like.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-color: #8a8a8a;
+    width: 60px;
+    height: 25px;
+    padding-left: 23px;
+    line-height: 10px;
+    text-align: left;
+    border: none;
+  }
+
+  .like-button.liked {
+    background-color: #01579b;
+  }
+  .drop-down-container {
+    position: absolute;
+    min-width: 150px;
+    height: auto;
+    background-color: #ffffff;
+    padding: 10px;
+    right: 0;
+    top: 50px;
+    text-align: left;
+    display: none;
+  }
+  .drop-down-container span{
+    display: block;
+  }
+  .drop-down-container span.separator{
+    border-bottom: 1px solid #d7d7d7;
+    margin: 10px -10px;
+  }
+
+  .profile {
+    width: 45%;
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    text-align: center;
+    margin: 1%;
+  }
+  .profile img{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 5px;
+  }
+
+  .profile h2{
+    font-size: 16px;
+  }
+
+  .follow-button{
+    background-color: #82008f;
+  }
+
+  .follow-button.followed{
+    background-color: #ffffff;
+    border: 1px solid #82008f;
+    color: #82008f;
+  }
+
 </style>
