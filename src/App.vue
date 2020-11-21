@@ -1,49 +1,35 @@
 <template>
   <div id="app">
-    <Header/>
-    <Home/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
 
 export default {
   name: 'App',
-  components: {
-    Header
-  }
 }
 </script>
 
 <style>
-  a {
-    color: #40c4ff;
+  * {
+    font-family: 'Roboto Slab', serif;
+    outline: none;
   }
 
-  .login-page {
+  html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
-  #login-container {
-    background-image: url(/assets/logo.png);
-    background-size: 20% auto;
-    background-repeat: no-repeat;
-    background-position: 15px 15px;
-    min-width: 25%;
-    padding: 45px 45px;
-    background-color: #ffffff;
-    box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
-    text-align: center;
+  body {
+    background-color: #0277bd;
+    color: #263238;
   }
-
-  #login-container form div > input {
-    padding: 8px 16px;
-    margin: 4px 0;
+  a {
+    color: #40c4ff;
   }
 
   button {

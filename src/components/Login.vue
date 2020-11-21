@@ -61,6 +61,8 @@
         background-position: 15px 15px;
         min-width: 25%;
         padding: 45px 45px;
+        margin-top: 10%;
+        margin-bottom: 10%;
         background-color: #ffffff;
         box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
         text-align: center;
