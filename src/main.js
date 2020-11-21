@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import Browse from "./components/Browse";
 import Login from "./components/Login";
-import Home from "./components/Home";
+import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 
 
@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 
 const routes = [
-  {path: '/', name: 'home', component: Home},
+  {path: '/', name: 'header', component: Header},
   {path: '/login', name: 'login', component: Login},
   {path: '/browse', name: 'browse', component: Browse},
   {path: '*', name: '404', component: NotFound}
