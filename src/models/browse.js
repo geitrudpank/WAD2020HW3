@@ -1,3 +1,4 @@
+//pole tegelikult vaja, peab vue'sse ümber kirjutama
 $(function () {
 
     toggleProfileMenu();

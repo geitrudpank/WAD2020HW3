@@ -1,5 +1,6 @@
 <template>
-  <section class="main-container"></section>
+  <section class="main-container">
+  </section>
 </template>
 
 <script>
