@@ -1,49 +1,35 @@
 <template>
   <div>
-    <div class="post" v-for="post in myValue" :key="post.id">
-      <div class="post-title" id="post-title">
-        <div class="post-actions" id="post-actions">
-          <span class="post-author" id="post-author">
-            <span class="post-author-info" id="post-author-infos">
-              <small>{{ post.author.firstname }} {{ post.author.lastname }}</small>
-              <img v-bind:src="post.author.avatar"/>
-            </span>
-            <small>{{ post.createTime }}</small>
-          </span>
-          <div class="post-image" v-if="post.media != null && post.media.type =='image'">
-            <img v-bind:src="post.media.url" alt="Post image">
-          </div>
-          <div class="post-image" v-if="post.media != null && post.media.type == 'video'">
-            <video controls>
-              <source v-bind:src="post.media.url" alt="Post video">
-            </video>
-          </div>
+    <div class="row">
+      <div class="column" v-for="users in myValue" :key="users.firstName">
+        <div class="profile">
+          <img class="photo" v-bind:src="users.avatar" alt="Me"/>
+          <p>{{ users.firstname }} {{ users.lastname }}</p>
+          <button value="Follow" type="button" class="follow-button" @click="like => like.target.classList.toggle('followed')">Follow</button>
+
         </div>
-        <h3>{{ post.text }}</h3>
       </div>
-      <button type="button" class="like-button" @click="like => like.target.classList.toggle('liked')">
-        {{ post.likes }}
-      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Post",
+  name: "Users",
   computed: {
     myValue() {
-      return this.$store.state.posts;
+      return this.$store.state.users;
     }
   },
   created() {
-    this.$store.dispatch('loadPosts');
+    this.$store.dispatch('loadUsers');
   }
-};
 
+}
 </script>
 
 <style scoped>
+
 * {
   font-family: 'Roboto Slab', serif;
   outline: none;
@@ -301,5 +287,4 @@ nav div.avatar-container {
   border: 1px solid #82008f;
   color: #82008f;
 }
-
 </style>

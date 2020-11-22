@@ -1,8 +1,9 @@
 <template>
   <selection>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <Header/>
     <MainContainer/>
-  </selection>
+ </selection>
 
 </template>
 
