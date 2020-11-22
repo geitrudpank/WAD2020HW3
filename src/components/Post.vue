@@ -5,7 +5,7 @@
         <div class="post-actions" id="post-actions">
           <span class="post-author" id="post-author">
             <span class="post-author-info" id="post-author-infos">
-              <small>{{ post.author.firstname }} {{ post.author.lastname }}</small>
+              <small>{{ post.author.firstname | capitalize(post.author.firstname) }} {{ post.author.lastname | capitalize(post.author.lastname)}}</small>
               <img v-bind:src="post.author.avatar"/>
             </span>
             <small>{{ post.createTime }}</small>
@@ -38,6 +38,13 @@ export default {
   },
   created() {
     this.$store.dispatch('loadPosts');
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
   }
 };
 
