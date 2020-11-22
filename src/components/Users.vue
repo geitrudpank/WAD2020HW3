@@ -286,5 +286,11 @@ nav div.avatar-container {
   background-color: #ffffff;
   border: 1px solid #82008f;
   color: #82008f;
+  content: 'test';
+}
+
+/* Nobel prize worthy code below */
+.follow-button.followed:after{
+  content: "ed";
 }
 </style>
