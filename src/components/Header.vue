@@ -2,7 +2,7 @@
   <header>
     <nav>
       <div class="logo-container">
-          <router-link to="home"><img src="../assets/logo.png" alt="postIt"></router-link>
+          <router-link to="/"><img src="../assets/logo.png" alt="postIt"></router-link>
       </div>
       <div class="search-container">
         <input type="text" name="search">
