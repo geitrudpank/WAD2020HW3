@@ -34,7 +34,7 @@
         </div>
         <h3>{{post.text}}</h3>
       </div>
-      <button type="button" class="like-button"></button>
+      <button type="button" class="like-button" @click="like => like.target.classList.toggle('liked')">{{post.likes}}</button>
     </div>
   </div>
 </template>
