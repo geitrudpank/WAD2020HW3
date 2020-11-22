@@ -6,8 +6,7 @@
           <img class="photo" v-bind:src="users.avatar" alt="Me"/>
           <p>{{ users.firstname }} {{ users.lastname }}</p>
           <button value="Follow" type="button" class="follow-button" @click="like => like.target.classList.toggle('followed')">Follow</button>
-
-        </div>
+          </div>
       </div>
     </div>
   </div>
@@ -255,23 +254,25 @@ nav div.avatar-container {
   border-bottom: 1px solid #d7d7d7;
   margin: 10px -10px;
 }
-
 .profile {
+  float: left;
   width: 45%;
-  display: inline-block;
-  border: 1px solid #dedede;
-  border-radius: 5px;
+  border: 1px solid rgb(228, 221, 221);
+  height: 200px;
+  margin: 10px;
   text-align: center;
-  margin: 1%;
+  font-weight: 700;
 }
 
 .profile img {
-  width: 75px;
-  height: 75px;
-  border-radius: 100%;
+  width:80px;
+  height:80px;
   object-fit: cover;
-  object-position: top;
-  margin: 5px;
+  border-radius: 50%;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile h2 {
@@ -293,11 +294,9 @@ nav div.avatar-container {
 .follow-button.followed:after{
   content: "ed";
 }
-
-.column{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 </style>
