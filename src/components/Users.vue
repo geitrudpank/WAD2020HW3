@@ -293,4 +293,11 @@ nav div.avatar-container {
 .follow-button.followed:after{
   content: "ed";
 }
+
+.column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 </style>
