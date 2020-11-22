@@ -1,7 +1,6 @@
 <template>
     <header>
         <nav>
-            <h1>{{info}}</h1>
             <div class="logo-container">
                 <router-link to="/">
                     <img src="../assets/logo.png" alt="postIt">
@@ -31,20 +30,6 @@
 </template>
 
 <script>
-    import axios from 'axios'
-    export default {
-        name: "Header",
-        data () {
-            return {
-                info: null
-            }
-        },
-        mounted () {
-            axios
-                .get('https://private-517bb-wad20postit.apiary-mock.com/posts')
-                .then(response => (this.info = response))
-        }
-    }
 </script>
 
 <style scoped>

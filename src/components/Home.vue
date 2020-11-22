@@ -1,11 +1,17 @@
 <template>
-  <section class="main-container">
-  </section>
+  <selection>
+    <Header/>
+    <MainContainer/>
+  </selection>
+
 </template>
 
 <script>
+import Header from "@/components/Header";
+import MainContainer from "@/components/MainContainer"
 export default {
   name: 'Home',
+  components: {Header, MainContainer},
 }
 </script>
 
